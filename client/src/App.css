@@ -1,0 +1,93 @@
+body,
+html {
+    margin: 0;
+    background-color: #1E192C;
+}
+
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.bgimg-1{
+    background-image: url("../src//assets/images/img-paralax-7.jpg");
+    min-height: 100vh;
+}
+
+.bgimg-2{
+    background-image: url("../src//assets/images/img-paralax-new.png");
+    min-height: 800px;
+}
+
+.bgimg-3{
+    background-image: url("../src//assets/images/img-paralax-6.jpg");
+    min-height: 100vh;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption .titleBorder {
+    background-color: #5F9EA0;
+    color: #FFF;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 5px;
+    opacity: 0.8;
+    border-radius: 22px;
+}
+
+.section {
+    height: 315px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 200px;
+    color: #FFF;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container-input{
+    font-size: 22px;
+    text-align: center;
+    color: #FFF;
+}
+
+.container-input input{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.container-input button{
+    padding: 5px 15px;
+}
+
+.container-text{
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    min-width:  150px;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    border: 1px solid #000;
+    background-color: #5F9EA090;
+}
