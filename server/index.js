@@ -40,7 +40,6 @@ app.post('/api/insert', (req, res) =>{
 
 /* Teste base de donnée */
 
-
 /* app.get('/', (req, res) =>{
     
     const sqlInsert = "INSERT INTO name (name) VALUES ('Pedro') "

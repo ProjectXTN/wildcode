@@ -2,6 +2,7 @@ body,
 html {
     margin: 0;
     background-color: #1E192C;
+    box-sizing: border-box;
 }
 
 .bgimg-1,
@@ -71,6 +72,7 @@ html {
     color: #FFF;
 }
 
+
 .container-input input{
     font-size: 20px;
     margin-right: 5px;
@@ -82,12 +84,23 @@ html {
 
 .container-text{
     position: absolute;
-    top: 50%;
-    width: 30%;
-    min-width:  150px;
-    text-align: center;
+    top: 17%;
+    width: 50%;
+    max-height: 650px;
     color: #fff;
     font-size: 22px;
     border: 1px solid #000;
     background-color: #5F9EA090;
+}
+
+.container-text h3{
+    text-align: center;
+}
+
+.container-text ul{
+    list-style-type: none;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }

@@ -19,9 +19,8 @@ function App() {
   const submitReview = () => {
     Axios.post('http://localhost:3001/api/insert', {
       nom: nom,
-    }).then(() => {
+    });
       alert("Le nom été saisi");
-    })
   };
 
 
@@ -54,9 +53,11 @@ function App() {
                 </div>
                 <div className='container-text'>
                   <h3>Membres de l'équipage</h3>
+                  <ul>
                   {nomList.map((val) =>{
-                    return <p key={val.id}>{val.nom}</p>
+                    return <li key={val.id}>{val.nom}</li>
                   })}
+                  </ul>
                 </div>
             </div>
           </div>
