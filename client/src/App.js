@@ -16,12 +16,16 @@ function App() {
     })
   }, [nomList])
 
-  const submitReview = () => {
+  const submitName = () => {
     Axios.post('http://localhost:3001/api/insert', {
       nom: nom,
     });
-      alert("Le nom été saisi");
+
   };
+
+  const deleteName = (id) => {
+    Axios.delete(`http://localhost:3001/api/delete/${id}`);
+  }
 
 
   return (
@@ -49,13 +53,20 @@ function App() {
                     setNom(e.target.value);
                   }}/>
                   
-                  <button onClick={submitReview}>Ajouté</button>
+                  <button onClick={submitName}>Ajouté</button>
                 </div>
                 <div className='container-text'>
                   <h3>Membres de l'équipage</h3>
                   <ul>
                   {nomList.map((val) =>{
-                    return <li key={val.id}>{val.nom}</li>
+                    return (
+                    <> 
+                    <li key={val.id}>{val.nom}</li>
+                    <div>
+                    <button onClick={() => {deleteName(val.id)}}>Supprimé</button>
+                    </div>
+                    </>
+                    );
                   })}
                   </ul>
                 </div>

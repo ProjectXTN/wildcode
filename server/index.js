@@ -18,7 +18,7 @@ app.use(express.json()); /* Pour retourne string */
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-
+/* Method GET pour recupere des donnée */
 app.get('/api/get', (req, res) => {
 
     const sqlSelect = "SELECT * FROM equipage"
@@ -29,13 +29,22 @@ app.get('/api/get', (req, res) => {
 
 /* Method POST pour envoye les donnée */
 app.post('/api/insert', (req, res) =>{
-    const nom = req.body.nom ;
+    const name = req.body.nom ;
 
     const sqlInsert = "INSERT INTO equipage (nom) VALUES (?)"
-    db.query(sqlInsert, [nom], (err, result) => {
+    db.query(sqlInsert, [name], (err, result) => {
         console.log(err);
     })
 });
+
+app.delete('/api/delete/:id', (req, res) =>{
+    const name = req.params.id;
+
+    const sqlDelete = "DELETE FROM equipage WHERE id = ?"
+    db.query(sqlDelete, name, (err, result) => {
+       if(err) console.log(err);
+    })
+})
 
 
 /* Teste base de donnée */
