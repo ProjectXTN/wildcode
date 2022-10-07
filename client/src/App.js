@@ -16,13 +16,16 @@ function App() {
     })
   }, [nomList])
 
+
+  /* Methode pour envoye les donnéee */
   const submitName = () => {
     Axios.post('http://localhost:3001/api/insert', {
       nom: nom,
     });
-
+    setNom('');
   };
 
+  /* Methode pour supprime le donnée */
   const deleteName = (id) => {
     Axios.delete(`http://localhost:3001/api/delete/${id}`);
   }
@@ -49,7 +52,7 @@ function App() {
                 <div className='container-input'>
                   <h2> Ajouter un(e) Argonaute</h2>
                   <label>Nom de l'Argonaute </label>
-                  <input type="text" name="argonaute" onChange={(e) => {
+                  <input type="text" value={nom} name="argonaute" onChange={(e) => {
                     setNom(e.target.value);
                   }}/>
                   
@@ -75,6 +78,13 @@ function App() {
 
         <div className='section'>
           <h3 className='titleBorder'> To be continue ...</h3>
+          <p>Quelques heures plus tard, grâce à vous, l’équipe des cinquantes Argonautes est constituée.
+            Jason sourit lorsqu’il saisit sur la page web les deux derniers membres de l’équipage, auxquels il ajoute quelques adjectifs qualificatifs : “Jason, beau, vaillant et courageux”.
+            C’est un peu trop sans doute, mais il n’y a pas de mal à se faire plaisir…
+            Tout en bas de la liste, Jason ajoute votre nom, suivi de l’adjectif : chanceux !
+
+            Vous faites partie de l'expédition, vous n’en croyez pas vos yeux.
+            En attendant, vous avez une mission beaucoup plus importante : l’entretien de la Wild Code School. Que la chance soit avec vous !</p>
 
         </div>
 
